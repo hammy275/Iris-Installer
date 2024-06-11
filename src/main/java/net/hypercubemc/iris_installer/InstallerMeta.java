@@ -26,7 +26,7 @@ public class InstallerMeta {
         System.out.println(metaUrl);
 
         JSONObject json = readJsonFromUrl(this.metaUrl);
-        betaSnippet = "Distant Horizons";
+        betaSnippet = json.getString("betaVersionSnippet");
         json.getJSONArray("versions").toList().forEach(element -> versions.add(new Version((HashMap<String, Object>) element)));
     }
 

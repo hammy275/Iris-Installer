@@ -85,6 +85,12 @@ public class NewInstaller extends JFrame {
 
         initComponents();
 
+        if (GAME_VERSIONS.stream().noneMatch(i -> i.hasBeta)) {
+            betaSelection.setVisible(false);
+            betaSelection.setSelected(false);
+            betaSelection.setEnabled(false);
+        }
+
         betaSelection.setText("Use " + INSTALLER_META.getBetaSnippet() + " beta version (not recommended)");
 
         // Change outdated version text color based on dark mode
